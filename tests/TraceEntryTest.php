@@ -1,12 +1,7 @@
 <?php
-
-/*
- * This file is part of Chevere.
- *
- * (c) Rodolfo Berrios <rodolfo@chevere.org>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+/**
+ * This file is part of Swow-Cloud/Job
+ * @license  https://github.com/serendipity-swow/serendipity-job/blob/master/LICENSE
  */
 
 declare(strict_types=1);
@@ -17,6 +12,10 @@ use Chevere\Trace\TraceEntry;
 use InvalidArgumentException;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * @internal
+ * @coversNothing
+ */
 final class TraceEntryTest extends TestCase
 {
     public function testConstructInvalidArgument(): void

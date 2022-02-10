@@ -1,12 +1,7 @@
 <?php
-
-/*
- * This file is part of Chevere.
- *
- * (c) Rodolfo Berrios <rodolfo@chevere.org>
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
+/**
+ * This file is part of Swow-Cloud/Job
+ * @license  https://github.com/serendipity-swow/serendipity-job/blob/master/LICENSE
  */
 
 declare(strict_types=1);
@@ -113,8 +108,13 @@ final class TraceEntry implements TraceEntryInterface
     private function handleMissingClassFile()
     {
         if ($this->file === '' && $this->class !== '') {
-            /** @var class-string $this->class */
-            $reflector = new ReflectionMethod($this->class, $this->function);
+            /* @var class-string $this->class */
+            try {
+                $reflector = new ReflectionMethod($this->class, $this->function);
+            } catch (\ReflectionException $exception) {
+                $reflector = new \ReflectionClass($this->class);
+            }
+           
             $filename = $reflector->getFileName();
             if ($filename) {
                 $this->file = $filename;

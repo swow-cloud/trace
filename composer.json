@@ -1,5 +1,5 @@
 {
-    "name": "chevere/trace",
+    "name": "swow-cloud/trace",
     "description": "A chevere trace component.",
     "homepage": "https://chevere.org",
     "type": "library",
@@ -38,5 +38,11 @@
     },
     "scripts-descriptions": {
         "update-cs": "Update Chevere code style definition"
-    }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "3.0.x-dev"
+        }
+    },
+    "version": "dev-master"
 }
